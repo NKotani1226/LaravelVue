@@ -3,8 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\User;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use App\Models\Post;
 
 class UserListRepository
 {
@@ -29,5 +28,9 @@ class UserListRepository
         return User::whereBetween('id', [3, 5])->get();
     }
 
+    public function getJoinPost()
+    {
+        return Post::with('user')->get();
+    }
     
 }

@@ -106,6 +106,33 @@
                 </tbody>
             </table>
         </div>
+
+        <div class="container mt-5">
+            <h2>JOINDATA</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>MAIL</th>
+                        <th>POST TITLE</th>
+                        <th>POST CONTENT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($join as $data)
+                        <tr>
+                            <td>{{ $data->user->id }}</td>
+                            <td>{{ $data->user->name }}</td>
+                            <td>{{ $data->user->email }}</td>
+                            <td>{{ $data->title }}</td>
+                            <td>{{ $data->content }}</td>
+                        </tr>
+                    @endforeach
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     </body>

@@ -24,5 +24,11 @@ class PostSeeder extends Seeder
             'content' => 'Content for the second post goes here.',
             'userId' => 1
         ]);
+
+        Post::create([
+            'title' => 'First Second User Post',
+            'content' => 'Content for the second post goes here.',
+            'userId' => 2
+        ]);
     }
 }
