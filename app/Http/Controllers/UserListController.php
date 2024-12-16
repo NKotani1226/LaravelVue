@@ -17,7 +17,8 @@ class UserListController extends Controller
     public function index()
     {
         $users = $this->userListService->getAllUsers();
-        dd($users);
-        return view("userlist");
+        $pagenate = $this->userListService->getPaginatedUsers(2);
+        $whereUser = $this->userListService->getWhereUser();
+        return view("userlist",compact('users','pagenate'));
     }
 }
