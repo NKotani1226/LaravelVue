@@ -33,4 +33,11 @@ class UserListRepository
     {
         return User::where("name","Johnathon Schmidt")->get();
     }
+
+    public function getWhereBetWeen()
+    {
+        return User::whereBetween('id', [3, 5])->get();
+    }
+
+    
 }

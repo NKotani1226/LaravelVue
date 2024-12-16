@@ -19,6 +19,12 @@ class UserListController extends Controller
         $users = $this->userListService->getAllUsers();
         $pagenate = $this->userListService->getPaginatedUsers(2);
         $whereData = $this->userListService->getWhereName();
-        return view("userlist",compact('users','pagenate','whereData'));
+        $whereBetween = $this->userListService->getWhereBetween();
+        return view("userlist",compact(
+            'users',
+            'pagenate',
+            'whereData',
+            'whereBetween'
+        ));
     }
 }

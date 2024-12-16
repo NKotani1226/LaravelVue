@@ -29,4 +29,9 @@ class UserListService
     {
         return $this->userListRepository->getWhereName();
     }
+
+    public function getWhereBetWeen()
+    {
+        return $this->userListRepository->getWhereBetWeen();
+    }
 }

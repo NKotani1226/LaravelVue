@@ -42,6 +42,15 @@
                 @endforeach
             </ul>
         </div>
+
+        <div class="container mt-5">
+            <h2 class="mb-3">WHEREBETEEN</h2>
+            <ul class="list-group">
+                @foreach ($whereBetween as $user)
+                    <li class="list-group-item">{{ $user->id }}: {{ $user->name }} ({{ $user->email }})</li>
+                @endforeach
+            </ul>
+        </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     </body>
 </html>
