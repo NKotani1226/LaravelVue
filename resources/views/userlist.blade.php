@@ -15,42 +15,98 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
+        <div class="container mt-5">
+            <h2>ALLDATA</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>MAIL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($users as $user)
+                        <tr>
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                        </tr>
+                    @endforeach
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container mt-5">
+            <h2>PAGENATE</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>MAIL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($pagenate as $user)
+                        <tr>
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                        </tr>
+                    @endforeach
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container mt-5">
+            <h2>WHERE</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>MAIL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($whereData as $user)
+                        <tr>
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                        </tr>
+                    @endforeach
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container mt-5">
+            <h2>WHEREBETEEN</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>MAIL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($whereBetween as $user)
+                        <tr>
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                        </tr>
+                    @endforeach
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
        
-        <div class="container mt-5">
-            <h2 class="mb-3">ALL</h2>
-            <ul class="list-group">
-                @foreach ($users as $user)
-                    <li class="list-group-item">{{ $user->id }}: {{ $user->name }} ({{ $user->email }})</li>
-                @endforeach
-            </ul>
-        </div>
-        
-        <div class="container mt-5">
-            <h2 class="mb-3">PAGENATE</h2>
-            <ul class="list-group">
-                @foreach ($pagenate as $user)
-                    <li class="list-group-item">{{ $user->id }}: {{ $user->name }} ({{ $user->email }})</li>
-                @endforeach
-            </ul>
-        </div>
-
-        <div class="container mt-5">
-            <h2 class="mb-3">WHERE</h2>
-            <ul class="list-group">
-                @foreach ($whereData as $user)
-                    <li class="list-group-item">{{ $user->id }}: {{ $user->name }} ({{ $user->email }})</li>
-                @endforeach
-            </ul>
-        </div>
-
-        <div class="container mt-5">
-            <h2 class="mb-3">WHEREBETEEN</h2>
-            <ul class="list-group">
-                @foreach ($whereBetween as $user)
-                    <li class="list-group-item">{{ $user->id }}: {{ $user->name }} ({{ $user->email }})</li>
-                @endforeach
-            </ul>
-        </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     </body>
 </html>
