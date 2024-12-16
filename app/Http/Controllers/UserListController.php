@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\UserListService;
+
 class UserListController extends Controller
 {
 
-    public function __construct()
+    private $userListService;
+
+    public function __construct(UserListService $userListService)
     {
+        $this->userListService = $userListService;
     }
 
     public function index()
     {
+        $users = $this->userListService->getAllUsers();
+        dd($users);
         return view("userlist");
     }
 }
