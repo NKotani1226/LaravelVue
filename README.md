@@ -19,5 +19,9 @@
 - php artisan key:generate
 - npm run dev
 
+### ページ
+- [ユーザーリスト](http://localhost/userlist)
+- [バリデーション](http://localhost/validation)
+
 ### LINK
 - [環境構築参考](https://qiita.com/hitotch/items/2e816bc1423d00562dc2)
