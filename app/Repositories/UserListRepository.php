@@ -28,4 +28,9 @@ class UserListRepository
     {
         return User::paginate($perPage); // ページネート取得
     }
+
+    public function getWhereName()
+    {
+        return User::where("name","Johnathon Schmidt")->get();
+    }
 }

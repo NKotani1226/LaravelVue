@@ -17,7 +17,7 @@
     <body>
        
         <div class="container mt-5">
-            <h2>ALL</h2>
+            <h2 class="mb-3">ALL</h2>
             <ul class="list-group">
                 @foreach ($users as $user)
                     <li class="list-group-item">{{ $user->id }}: {{ $user->name }} ({{ $user->email }})</li>
@@ -26,9 +26,18 @@
         </div>
         
         <div class="container mt-5">
-            <h2>PAGENATE</h2>
+            <h2 class="mb-3">PAGENATE</h2>
             <ul class="list-group">
                 @foreach ($pagenate as $user)
+                    <li class="list-group-item">{{ $user->id }}: {{ $user->name }} ({{ $user->email }})</li>
+                @endforeach
+            </ul>
+        </div>
+
+        <div class="container mt-5">
+            <h2 class="mb-3">WHERE</h2>
+            <ul class="list-group">
+                @foreach ($whereData as $user)
                     <li class="list-group-item">{{ $user->id }}: {{ $user->name }} ({{ $user->email }})</li>
                 @endforeach
             </ul>
