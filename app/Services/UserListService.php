@@ -34,4 +34,9 @@ class UserListService
     {
         return $this->userListRepository->getWhereBetWeen();
     }
+
+    public function getJoinPost()
+    {
+        return $this->userListRepository->getJoinPost();
+    }
 }
