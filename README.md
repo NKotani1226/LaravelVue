@@ -16,6 +16,7 @@
 - chmod -R guo+w storage
 - php artisan storage:link
 - php artisan migrate
+- php artisan db:seed --class=PostSeeder
 - php artisan key:generate
 - npm run dev
 
