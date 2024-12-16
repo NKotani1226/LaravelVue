@@ -9,4 +9,5 @@ Route::get('/', function () {
 });
 
 Route::get('/userlist', [UserListController::class,"index"]);
-Route::get('/validation', [ValidationController::class,"index"]);
+Route::get('/validation', [ValidationController::class,"index"])->name('validation.index');
+Route::post('/validation/store', [ValidationController::class,"store"])->name('validation.store');
