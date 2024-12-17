@@ -1,14 +1,7 @@
 <template>
   <div id="userList">
     <div class="container mt-5">
-        <h1 class="mb-4">UserList</h1>
-
-        <ul class="list-group">
-            <li class="list-group-item">Item 1</li>
-            <li class="list-group-item">Item 2</li>
-            <li class="list-group-item">Item 3</li>
-        </ul>
-
+        <ListParts id="listparts" class="setup"></ListParts>
     </div>
   </div>
 </template>
@@ -17,4 +10,7 @@
 export default {
   name: 'UserList',
 };
+</script>
+<script setup>
+import ListParts from './ListParts.vue';
 </script>

@@ -15,6 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
+        <div id="userList"></div>
         <div class="container mt-5">
             <h2>ALLDATA</h2>
             <table class="table">
