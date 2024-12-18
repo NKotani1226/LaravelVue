@@ -46,6 +46,6 @@ class UserController
      */
     public function destroy(string $id)
     {
-        //
+        User::where('id', $id)->delete();
     }
 }

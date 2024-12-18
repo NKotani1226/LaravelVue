@@ -1,7 +1,10 @@
 <template>
   <!--一覧取得-->
   <div class="container mt-5"> 
-      <h2 class="fs-1 mb-2">一覧情報</h2>      
+      <h2 class="fs-1 mb-2">一覧情報</h2>  
+      <div v-if="listmessage" class="alert alert-primary">
+        {{ listmessage }}
+      </div>    
       <table class="table">
           <thead>
               <tr>
@@ -15,6 +18,12 @@
                 <td>{{ user.id}}</td>
                 <td>{{ user.name}}</td>
                 <td>{{ user.email }}</td>
+                <td>
+                  <button
+                    @click="deleteUser(user.id)"
+                    >削除
+                  </button>
+                </td>
               </tr>
           </tbody>
       </table>
@@ -64,7 +73,8 @@ export default {
       password: '',
       password_confirmation: '',
       error: '',
-      message: ''
+      message: '',
+      listmessage: ''
     }
   },
   created() {
@@ -77,6 +87,7 @@ export default {
       });
     },
     addUser() {
+      this.listmessage = "";
       axios.post('/api/user', {
         name: this.name,
         email: this.email,
@@ -102,6 +113,14 @@ export default {
           this.message = '';
           console.error(err);
         });
+    },
+    deleteUser(id) {
+      this.error = '';
+      this.message = '';
+      axios.delete('/api/user/' + id).then(() => {
+        this.getUsers();
+        this.listmessage = '削除完了しました';
+      });
     },
   }
 }
