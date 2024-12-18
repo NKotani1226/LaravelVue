@@ -23,6 +23,7 @@
 ### ページ
 - [ユーザーリスト](http://localhost/userlist)
 - [バリデーション](http://localhost/validation)
+- [パーツ分け](http://localhost/parts)
 
 ### LINK
 - [環境構築参考](https://qiita.com/hitotch/items/2e816bc1423d00562dc2)
