@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserListController;
+use App\Http\Controllers\UserCRUDController;
 use App\Http\Controllers\ValidationController;
 use App\Http\Controllers\PartsController;
 
@@ -10,6 +11,8 @@ Route::get('/', function () {
 });
 
 Route::get('/userlist', [UserListController::class,"index"]);
+
+Route::get('/usercrud', [UserCRUDController::class,"index"]);
 
 Route::get("/parts",[PartsController::class,"index"]);
 
