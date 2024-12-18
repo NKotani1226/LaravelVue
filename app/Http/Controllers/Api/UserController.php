@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UserAddFormRequest;
 use App\Models\User;
 
 class UserController
@@ -18,9 +19,10 @@ class UserController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(UserAddFormRequest $request)
     {
-        //
+        $validated = $request->validated();
+        User::create($request->all());
     }
 
     /**
