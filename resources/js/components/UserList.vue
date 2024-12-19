@@ -86,6 +86,33 @@
                 </tbody>
             </table>
         </div>
+
+        <div class="container mt-5 mb-5">
+            <h2>JOINDATA</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>MAIL</th>
+                        <th>POST TITLE</th>
+                        <th>POST CONTENT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="joinuser in joinusers" :key="joinuser.id">
+                        <template v-if="joinuser.user !== null">
+                            <td>{{joinuser.user.id }}</td>
+                            <td>{{joinuser.user.name }}</td>
+                            <td>{{joinuser.user.email }}</td>
+                            <td>{{joinuser.title }}</td>
+                            <td>{{joinuser.content }}</td>
+                        </template>
+                    </tr>
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
   </div>
 </template>
@@ -100,7 +127,8 @@ export default {
       users: {},
       pusers: {},
       wusers: {},
-      wbusers: {}
+      wbusers: {},
+      joinusers: {}
     }
   },
   created() {
@@ -108,6 +136,7 @@ export default {
     this.getPagenate();
     this.getWhere();
     this.getBWhere();
+    this.getJoin();
   },
   methods: {
     getUsers() {
@@ -128,6 +157,12 @@ export default {
     getBWhere() {
       axios.get('/api/userlist/getWhereBetween').then(res => {
         this.wbusers = res.data;
+      });
+    },
+    getJoin() {
+      axios.get('/api/userlist/getJoin').then(res => {
+        this.joinusers = res.data;
+        console.log(this.joinusers);
       });
     },
   }

@@ -32,5 +32,10 @@ class UserListController
     {
         return $this->userListService->getWhereBetWeen();
     }
+
+    public function getJoin()
+    {
+        return $this->userListService->getJoinPost();
+    }
     
 }

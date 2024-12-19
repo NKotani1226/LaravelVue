@@ -11,5 +11,6 @@ Route::get('/userlist/alldata', [UserListController::class, 'getAllDate']);
 Route::get('/userlist/pagenate', [UserListController::class, 'getPagenate']);
 Route::get('/userlist/getWhere', [UserListController::class, 'getWhere']);
 Route::get('/userlist/getWhereBetween', [UserListController::class, 'getWhereBetween']);
+Route::get('/userlist/getJoin', [UserListController::class, 'getJoin']);
 
 Route::resource('/user', UserController::class);
