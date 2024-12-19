@@ -14,7 +14,5 @@ Route::get('/userlist', [UserListController::class,"index"]);
 
 Route::get('/usercrud', [UserCRUDController::class,"index"]);
 
-Route::get("/parts",[PartsController::class,"index"]);
-
 Route::get('/validation', [ValidationController::class,"index"])->name('validation.index');
 Route::post('/validation/store', [ValidationController::class,"store"])->name('validation.store');

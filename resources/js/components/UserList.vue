@@ -3,45 +3,49 @@
     <div class="container mt-5 mb-5">
         <h2>UserList</h2>
 
-        <ul class="list-group">
-          <li class="list-group-item" v-for="user in users" :key="user.id">{{ user.name }}</li>
-        </ul>
+        <div class="container mt-5">
+            <h2>ALLDATA</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>MAIL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="alluser in users" :key="alluser.id">
+                        <td>{{ alluser.id }}</td>
+                        <td>{{ alluser.name }}</td>
+                        <td>{{ alluser.email }}</td>
+                    </tr>
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>        
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-import { ref, onMounted } from 'vue';
-
 
 export default {
   name: 'UserList',
-  setup() {
-    const users = ref([]);
-
-    // APIを呼び出してデータを取得する
-    const fetchUsers = async () => {
-      try {
-        //WebAPI
-        const response = await axios.get('https://jsonplaceholder.typicode.com/users');
-        users.value = response.data;
-
-        //API
-        const res = await axios.get("/api/apidata");
-        console.log(res);
-        
-      } catch (error) {
-        console.error('データ取得エラー:', error);
-      }
-    };
-
-    // コンポーネントがマウントされた時にデータを取得
-    onMounted(fetchUsers);
-
+  data() {
     return {
-      users,
-    };
+      users: {},
+    }
   },
+  created() {
+    this.getUsers();
+  },
+  methods: {
+    getUsers() {
+      axios.get('/api/userlist/alldata').then(res => {
+        this.users = res.data;
+      });
+    },
+  }
 };
 </script>
