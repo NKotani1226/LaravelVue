@@ -162,7 +162,6 @@ export default {
     getJoin() {
       axios.get('/api/userlist/getJoin').then(res => {
         this.joinusers = res.data;
-        console.log(this.joinusers);
       });
     },
   }
