@@ -23,7 +23,6 @@
 ### ページ
 - [ユーザーリスト](http://localhost/userlist)
 - [バリデーション](http://localhost/validation)
-- [パーツ分け](http://localhost/parts)
 - [ユーザーCRUD](http://localhost/usercrud)
 
 ### LINK
