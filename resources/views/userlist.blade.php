@@ -121,6 +121,7 @@
                 </thead>
                 <tbody>
                     @foreach ($join as $data)
+                        @if(!is_null($data->user))
                         <tr>
                             <td>{{ $data->user->id }}</td>
                             <td>{{ $data->user->name }}</td>
@@ -128,6 +129,7 @@
                             <td>{{ $data->title }}</td>
                             <td>{{ $data->content }}</td>
                         </tr>
+                        @endif
                     @endforeach
                     <tr></tr>
                 </tbody>
