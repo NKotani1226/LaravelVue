@@ -22,7 +22,28 @@
                     <tr></tr>
                 </tbody>
             </table>
-        </div>        
+        </div>    
+        
+        <div class="container mt-5">
+            <h2>PAGENATE</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>MAIL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="puser in pusers" :key="puser.id">
+                        <td>{{ puser.id }}</td>
+                        <td>{{ puser.name }}</td>
+                        <td>{{ puser.email }}</td>
+                    </tr>
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
   </div>
 </template>
@@ -35,15 +56,23 @@ export default {
   data() {
     return {
       users: {},
+      pusers: {},
     }
   },
   created() {
     this.getUsers();
+    this.getPagenate();
   },
   methods: {
     getUsers() {
       axios.get('/api/userlist/alldata').then(res => {
         this.users = res.data;
+        console.log(res.data);
+      });
+    },
+    getPagenate() {
+      axios.get('/api/userlist/pagenate').then(res => {
+        this.pusers = res.data.data;
       });
     },
   }

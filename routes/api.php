@@ -8,5 +8,6 @@ use App\Http\Controllers\Api\UserListController;
 
 Route::get('/apidata', [ApiData::class, 'getapidata']);
 Route::get('/userlist/alldata', [UserListController::class, 'getAllDate']);
+Route::get('/userlist/pagenate', [UserListController::class, 'getPagenate']);
 
 Route::resource('/user', UserController::class);

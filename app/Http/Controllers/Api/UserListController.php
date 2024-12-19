@@ -17,4 +17,10 @@ class UserListController
     {
         return  $this->userListService->getAllUsers();
     }
+
+    public function getPagenate()
+    {
+        return  $this->userListService->getPaginatedUsers();
+    }
+    
 }
