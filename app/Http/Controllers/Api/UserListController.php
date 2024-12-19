@@ -22,5 +22,15 @@ class UserListController
     {
         return  $this->userListService->getPaginatedUsers();
     }
+
+    public function getWhere()
+    {
+        return $this->userListService->getWhereName();
+    }
+
+    public function getWhereBetween()
+    {
+        return $this->userListService->getWhereBetWeen();
+    }
     
 }

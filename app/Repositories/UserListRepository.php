@@ -20,7 +20,7 @@ class UserListRepository
 
     public function getWhereName()
     {
-        return User::where("name","Johnathon Schmidt")->get();
+        return User::where("name","Prof. Freda Ernser")->get();
     }
 
     public function getWhereBetWeen()

@@ -16,52 +16,6 @@
     </head>
     <body>
         <!-- 
-        <div class="container mt-5">
-            <h2>WHERE</h2>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>NAME</th>
-                        <th>MAIL</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($whereData as $user)
-                        <tr>
-                            <td>{{ $user->id }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                        </tr>
-                    @endforeach
-                    <tr></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="container mt-5">
-            <h2>WHEREBETEEN</h2>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>NAME</th>
-                        <th>MAIL</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($whereBetween as $user)
-                        <tr>
-                            <td>{{ $user->id }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                        </tr>
-                    @endforeach
-                    <tr></tr>
-                </tbody>
-            </table>
-        </div>
-
         <div class="container mt-5 mb-5">
             <h2>JOINDATA</h2>
             <table class="table">
