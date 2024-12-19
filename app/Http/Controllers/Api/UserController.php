@@ -38,7 +38,10 @@ class UserController
      */
     public function update(Request $request, string $id)
     {
-        //
+        User::where('id', $id)->update([
+            'name' => $request->name,
+            'email' => $request->email
+        ]);
     }
 
     /**

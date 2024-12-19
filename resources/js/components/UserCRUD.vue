@@ -11,18 +11,35 @@
                   <th>ID</th>
                   <th>NAME</th>
                   <th>MAIL</th>
+                  <th></th>
+                  <th></th>
               </tr>
           </thead>
           <tbody>
-              <tr v-for="user in users" :key="user.id"> 
-                <td>{{ user.id}}</td>
-                <td>{{ user.name}}</td>
-                <td>{{ user.email }}</td>
-                <td>
+              <tr v-for="(user,index) in users" :key="user.id"> 
+                <td >{{ user.id}}</td>
+                <td v-if="!isPush">{{ user.name}}</td>
+                <td v-if="!isPush">{{ user.email }}</td>
+                <td  v-if="isPush">
+                  <input type="text" class="col-10 border" v-model="user.name" name="name">
+                </td>
+                <td  v-if="isPush">
+                  <input type="email" class="col-10 border" v-model="user.email" name="email">
+                </td>
+                <td v-if="!isPush">
+                  <button @click="dispUpdate(user)">編集</button>
+                </td>
+                <td  v-if="isPush">
+                  <button @click="updateUser(index)">更新</button>
+                </td>
+                <td v-if="!isPush">
                   <button
                     @click="deleteUser(user.id)"
                     >削除
                   </button>
+                </td>
+                <td  v-if="isPush">
+                  <button @click="cancel()">キャンセル</button>
                 </td>
               </tr>
           </tbody>
@@ -67,14 +84,18 @@ export default {
   name: 'UserList',
   data() {
     return {
-      users: {},
+      users: [],
       name: '',
       email: '',
       password: '',
       password_confirmation: '',
       error: '',
       message: '',
-      listmessage: ''
+      listmessage: '',
+      isPush:false,
+      updateId: '',
+      updateName: '',
+      updateEmail: ''
     }
   },
   created() {
@@ -122,6 +143,25 @@ export default {
         this.listmessage = '削除完了しました';
       });
     },
+    dispUpdate(){
+      this.isPush = true;
+    },
+    updateUser(index){
+        this.updateId = this.users[index].id;
+        this.updateName = this.users[index].name;
+        this.updateEmail = this.users[index].email;
+
+        axios.put('/api/user/' + this.updateId, {
+        name: this.updateName,
+        email: this.updateEmail
+      }).then(() => {
+        this.isPush = false;
+        this.getUsers();
+      });
+    },
+    cancel(){
+      this.isPush = false;
+    }
   }
 }
 </script>
