@@ -19,3 +19,4 @@ Route::get('/validation', [ValidationController::class,"index"])->name('validati
 Route::post('/validation/store', [ValidationController::class,"store"])->name('validation.store');
 
 Route::get('/fileupload', [FileUploadController::class,"index"]);
+Route::post('/upload', [FileUploadController::class, 'upload'])->name('upload');
