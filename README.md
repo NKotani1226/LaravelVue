@@ -24,6 +24,7 @@
 - [ユーザーリスト](http://localhost/userlist)
 - [バリデーション](http://localhost/validation)
 - [ユーザーCRUD](http://localhost/usercrud)
+- [FileUpload](http://localhost/fileupload)
 
 ### LINK
 - [環境構築参考](https://qiita.com/hitotch/items/2e816bc1423d00562dc2)
